@@ -12,6 +12,8 @@ class NetService
     const STOP          = 'stop';
     const STATUS        = 'status';
     const LIST_SERVICES = 'list';
+    const PAUSE         = 'pause';
+    const RESUME        = 'resume';
 
     const DEFAULT_TIMEOUT = 3600;
 
@@ -31,6 +33,16 @@ class NetService
     public function stop()
     {
         return $this->runProcess($this->getCommandLineForAction(self::STOP));
+    }
+
+    public function pause()
+    {
+        return $this->runProcess($this->getCommandLineForAction(self::PAUSE));
+    }
+
+    public function resume()
+    {
+        return $this->runProcess($this->getCommandLineForAction(self::RESUME));
     }
 
     public function status()
