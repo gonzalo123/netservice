@@ -8,8 +8,7 @@
             "homepage":"http://gonzalo123.com/"
         }
     ],
-
-
+    "license": "GPL",
     "require":{
         "symfony/process":"dev-master"
     },
