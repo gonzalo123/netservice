@@ -8,9 +8,18 @@
             "homepage":"http://gonzalo123.com/"
         }
     ],
-    "license": "GPL",
+    "license":"GPL",
+
+    "config":{
+        "bin-dir":"bin/"
+    },
+
     "require":{
         "symfony/process":"dev-master"
+    },
+
+    "require-dev":{
+        "behat/behat":"2.4.*@stable"
     },
 
     "autoload":{

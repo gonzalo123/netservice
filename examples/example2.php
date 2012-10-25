@@ -1,10 +1,11 @@
 <?php
-
 include __DIR__ . '/../vendor/autoload.php';
 
+use NetService\Service,
+    NetService\Parser;
+
 $host        = 'windowshost.com';
-$serviceName = 'ServiceName';
 $credentials = '{domain}/{user}%{password}';
 
-$netService = new NetService($host, $serviceName, $credentials);
-echo $netService->listServices();
+$service = new Service(new Parser($host, $credentials));
+echo $service->listServices();

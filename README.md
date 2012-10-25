@@ -19,30 +19,37 @@ Usage
 ```php
 include __DIR__ . '/../vendor/autoload.php';
 
+use NetService\Service,
+    NetService\Parser;
+
 $host        = 'windowshost.com';
-$serviceName = 'ServiceName';
 $credentials = '{domain}/{user}%{password}';
 
-$netService = new NetService($host, $serviceName, $credentials);
-echo $netService->listServices();
+$service = new Service(new Parser($host, $credentials));
+echo $service->listServices();
 ```
 
 ```php
+include __DIR__ . '/../vendor/autoload.php';
+
+use NetService\Service,
+    NetService\Parser;
+
 $host        = 'windowshost.com';
 $serviceName = 'ServiceName';
 $credentials = '{domain}/{user}%{password}';
 
-$netService = new NetService($host, $serviceName, $credentials);
+$service = new Service(new Parser($host, $credentials));
 
-if ($netService->isRunning()) {
+if ($service->isRunning($serviceName)) {
     echo "Service is running. Let's stop";
-    $netService->stop();
+    $service->stop($serviceName);
 
 } else {
     echo "Service isn't running. Let's start";
-    $netService->start();
+    $service->start($serviceName);
 }
 
 //dumps status output
-echo $netService->status();
+echo $service->status($serviceName);
 ```
