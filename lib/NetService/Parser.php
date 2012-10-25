@@ -1,14 +1,10 @@
 <?php
-
 namespace NetService;
 
 class Parser
 {
     private $host;
     private $credentials;
-    private $service;
-    private $action;
-
 
     public function __construct($host, $credentials)
     {
