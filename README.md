@@ -14,7 +14,9 @@ net rpc service delete          Delete a service
 net rpc service create          Create a service
 ```
 
-Usage
+Usage:
+
+examples/example2.php
 
 ```php
 include __DIR__ . '/../vendor/autoload.php';
@@ -28,6 +30,8 @@ $credentials = '{domain}/{user}%{password}';
 $service = new Service(new Parser($host, $credentials));
 echo $service->listServices();
 ```
+
+examples/example1.php
 
 ```php
 include __DIR__ . '/../vendor/autoload.php';
